@@ -26,9 +26,9 @@ h1 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 40px;
+    font-size: 50px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    text-shadow: 0 0 6px white;
+    text-shadow: 0 0 12px white;
 }
 
 .dots {
@@ -42,12 +42,11 @@ h1 {
     display: inline-block;
     background-color: #000;
     margin: 0 20px;
-    width: 10px;
-    height: 10px;
+    width: 15px;
+    height: 15px;
     border-radius: 50%;
     box-shadow: 0 0 0 5px white;
 }
-
 .dots span.active {
     box-shadow: 0 0 0 5px white, 0 0 3px 10px red;
 }

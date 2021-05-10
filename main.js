@@ -22,9 +22,9 @@ let slideActive = 0;
 
 // Implementacja
 const changeDot = () => {
-    const indexActiveDot = dots.findIndex(dot => dot.classList.contains("active"))
+    const indexActiveDot = dots.findIndex(dot => dot.classList.contains("active"));
     dots[indexActiveDot].classList.remove("active");
-    dots[slideActive].classList.add("active")
+    dots[slideActive].classList.add("active");
 }
 
 const changeSlide = () => {
@@ -53,5 +53,17 @@ const keyChangeSlide = (event) => {
     }
 }
 
+const clickChangeSlide = (event) => {
+    clearInterval(indexInterval);
+    const indexNewSlideActive = dots.findIndex(dot => dot.isEqualNode(event.target));
+    slideActive = indexNewSlideActive;
+
+    image.src = slideList[slideActive].img;
+    h1.textContent = slideList[slideActive].text;
+    changeDot();
+    indexInterval = setInterval(changeSlide, time);
+}
+
 let indexInterval = setInterval(changeSlide, time);
 window.addEventListener("keydown", keyChangeSlide);
+dots.forEach(dot => dot.addEventListener("click", clickChangeSlide));
